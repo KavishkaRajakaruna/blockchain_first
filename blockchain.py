@@ -6,17 +6,14 @@ def get_last_blockchain_value():
 
 def add_value(transaction_amount, last_transaction = [1]):
     blockchain.append([last_transaction,transaction_amount])
-
-def get_user_input():
-    return float(input('Your transaction amount:'))
     
-tx_amount = get_user_input()
-add_value(tx_amount)
 
-tx_amount = get_user_input()
-add_value(tx_amount , get_last_blockchain_value())
+def user_input():
+    tx_amount = float(input('Your transaction amount:'))
+    return tx_amount
 
-tx_amount = get_user_input()
-add_value(tx_amount , get_last_blockchain_value())
+add_value(user_input())
+add_value(user_input() , get_last_blockchain_value())
+add_value(user_input() , get_last_blockchain_value())
 
 print(blockchain) 
